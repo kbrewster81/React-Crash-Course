@@ -1,13 +1,27 @@
-import './Modal.css'
+import "./Modal.css";
 
-function Modal({ title }) {
-  return ( 
+function Modal({ title, cancelModal, confirmModal }) {
+  function confirmModal() {
+    console.log("Confirmed");
+  }
+
+  return (
     <>
       <div className="modal">
         <p className="modal__title">{title}</p>
         <div className="modal__buttons">
-          <button className="btn btn__cancel">Cancel</button>
-          <button className="btn">Confirm</button>
+          <button 
+            onClick={cancelModal} 
+            className="btn btn__cancel"
+          >
+            Cancel
+          </button>
+          <button 
+            onClick={confirmModal} 
+            className="btn"
+          >
+            Confirm
+          </button>
         </div>
       </div>
       <div className="backdrop" />
