@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import User from "../componets/Users.jsx";
+import Users from "../pages/Users";
 import { Link } from "react-router-dom";
 function Home() {
   const [users, setUsers] = useState([]);
@@ -14,17 +14,15 @@ function Home() {
   }
 
   useEffect(() => {
-    setTimeout(() => {
       fetchUsers();
-    }, 500);
   }, []);
 
   return (
     <div>
       {users.map((user) => (
-        <Link to={`/${id}`}>
-          <User
-            key={user.id}
+        <Link to={`/users/${users.id}`} key={user.id}>
+          <Users
+            id={user.id}
             name={user.name}
             email={user.email}
             username={user.username}
