@@ -1,6 +1,6 @@
-function Users({id, name, email, username}) {
+function Users({ id, name, email, username }) {
   return (
-    <div style={{ border: `2px solid black`}}>
+    <div style={{ border: `2px solid black` }}>
       <div>{id}</div>
       <div>{name}</div>
       <div>{email}</div>
@@ -9,4 +9,4 @@ function Users({id, name, email, username}) {
   );
 }
 
-export default Users
+export default Users;
